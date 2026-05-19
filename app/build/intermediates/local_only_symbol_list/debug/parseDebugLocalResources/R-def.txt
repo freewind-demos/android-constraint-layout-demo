@@ -1,0 +1,12 @@
+R_DEF: Internal format may change without notice
+local
+id bottomCenterButton
+id centerButton
+id chainButton1
+id chainButton2
+id chainButton3
+id titleText
+id topLeftButton
+id topRightButton
+id widthExample
+layout activity_main

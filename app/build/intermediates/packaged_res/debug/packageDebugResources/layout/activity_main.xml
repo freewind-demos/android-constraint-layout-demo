@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- 居中显示的文本 -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ConstraintLayout 演示"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- 居中的按钮 -->
+    <Button
+        android:id="@+id/centerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="居中按钮"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 左上角按钮 -->
+    <Button
+        android:id="@+id/topLeftButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左上角"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- 右上角按钮 -->
+    <Button
+        android:id="@+id/topRightButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="右上角"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- 底部居中按钮 -->
+    <Button
+        android:id="@+id/bottomCenterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="底部居中"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
+
+    <!-- 宽度约束示例 -->
+    <TextView
+        android:id="@+id/widthExample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="宽度约束示例 - 占满左右两边"
+        android:background="#E0E0E0"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/centerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- 链式约束 -->
+    <Button
+        android:id="@+id/chainButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链1"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/widthExample"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/chainButton2"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/chainButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链2"
+        app:layout_constraintStart_toEndOf="@id/chainButton1"
+        app:layout_constraintEnd_toStartOf="@id/chainButton3"
+        app:layout_constraintTop_toTopOf="@id/chainButton1" />
+
+    <Button
+        android:id="@+id/chainButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="链3"
+        app:layout_constraintStart_toEndOf="@id/chainButton2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/chainButton1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
